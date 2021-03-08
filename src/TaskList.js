@@ -1,12 +1,12 @@
 import React from 'react';
 import Task from './Task.js';
 
-export default({ tasks, markTaskDone }) => {
+export default({ tasks, markTaskDone, deleteTask }) => {
     return (
         <ul className="list-group">
             {tasks.map(task => (
                 <li key={task.id} className="list-group-item">
-                    <Task task= { task } markTaskDone = { markTaskDone } />
+                    <Task deleteTask={deleteTask}  task= { task } markTaskDone = { markTaskDone } />
                 </li>
             ))}
             

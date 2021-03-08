@@ -23,6 +23,10 @@ function App() {
     });
     setTasks(newTaskList);
   }
+
+  const deleteTask = id => {
+    setTasks(tasks.filter(task => task.id !== id));
+  }
   return (
     <div className="container">
       <div className="row">
@@ -32,7 +36,7 @@ function App() {
           </div>
           <NewTask createTask = { createTask } />
           <br />
-          <TaskList tasks={ tasks } markTaskDone = { markTaskDone } />
+          <TaskList deleteTask={deleteTask} tasks={ tasks } markTaskDone = { markTaskDone } />
         </div>    
       </div>
     </div>
